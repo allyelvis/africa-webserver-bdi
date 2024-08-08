@@ -1,0 +1,13 @@
+{
+  "name": "optimized-web-server",
+  "version": "1.0.0",
+  "description": "A web server optimized for low bandwidth, offline capabilities, local language support, and mobile-first design.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^4.17.1"
+  }
+}
