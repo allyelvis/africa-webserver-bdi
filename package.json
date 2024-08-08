@@ -14,6 +14,10 @@
   },
   "devDependencies": {},
   "author": "Ally Elvis Nzeyimana",
-  "license": "ISC",
-  "keywords": []
+  "license": "MIT",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://allyelvis/africa-webserver-bdi"
+  }
 }
