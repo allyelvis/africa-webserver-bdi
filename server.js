@@ -1,19 +1,36 @@
 const express = require('express');
-const app = express();
-const port = 3000;
-
-// Middleware for compression
 const compression = require('compression');
-app.use(compression());
+const helmet = require('helmet');
+const morgan = require('morgan');
 
-// Serve static files from the 'public' directory
-app.use(express.static('public'));
+const app = express();
 
-// Route for the homepage
+// Middleware
+app.use(compression()); // Compress responses
+app.use(helmet()); // Set security headers
+app.use(morgan('combined')); // Log requests
+
+// Basic route
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/public/index.html');
+    res.send('Welcome to the Africa Web Server!');
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+// API example
+app.get('/api/data', (req, res) => {
+    res.json({
+        message: 'This is an example API response.',
+        data: []
+    });
+});
+
+// Error handling
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
+});
+
+// Start server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
