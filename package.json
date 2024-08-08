@@ -1,5 +1,5 @@
 {
-  "name": "optimized-web-server",
+  "name": "africa-webserver",
   "version": "1.0.0",
   "description": "A web server optimized for low bandwidth, offline capabilities, local language support, and mobile-first design.",
   "main": "server.js",
@@ -20,5 +20,6 @@
   "repository": {
     "type": "git",
     "url": "https://allyelvis/africa-webserver-bdi"
-  }
+  },
+  "devDependencies": {}
 }
